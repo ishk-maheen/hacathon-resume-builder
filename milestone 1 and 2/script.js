@@ -1,20 +1,16 @@
+// Using type assertions directly in the constant assignment
 var toggleSkillsButton = document.getElementById("toggleSkillsButton");
 var skillsSection = document.getElementById("skillsSection");
 var toggleExperienceButton = document.getElementById("toggleExperienceButton");
 var experienceSection = document.getElementById("experienceSection");
-toggleExperienceButton === null || toggleExperienceButton === void 0 ? void 0 : toggleExperienceButton.addEventListener("click", function () {
-    if ((experienceSection === null || experienceSection === void 0 ? void 0 : experienceSection.style.display) == "none") {
-        experienceSection.style.display = "block";
-    }
-    else {
-        experienceSection.style.display = "none";
-    }
-});
-toggleSkillsButton === null || toggleSkillsButton === void 0 ? void 0 : toggleSkillsButton.addEventListener("click", function () {
-    if ((skillsSection === null || skillsSection === void 0 ? void 0 : skillsSection.style.display) === "none") {
-        skillsSection.style.display = "block";
-    }
-    else {
-        skillsSection.style.display = "none";
-    }
-});
+// Check if elements are not null before adding event listeners
+if (toggleExperienceButton && experienceSection) {
+    toggleExperienceButton.addEventListener("click", function () {
+        experienceSection.style.display = experienceSection.style.display === "none" ? "block" : "none";
+    });
+}
+if (toggleSkillsButton && skillsSection) {
+    toggleSkillsButton.addEventListener("click", function () {
+        skillsSection.style.display = skillsSection.style.display === "none" ? "block" : "none";
+    });
+}

@@ -19,6 +19,7 @@
   
   header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 20px;
   }
@@ -121,4 +122,11 @@
   button:hover {
     background-color: #4c2f81;
   }
+
+    /* Responsive styles */
+    @media screen and (max-width: 840px) {
+      .resume-container {
+        margin: 50px 20px;
+      }
+    }
   
